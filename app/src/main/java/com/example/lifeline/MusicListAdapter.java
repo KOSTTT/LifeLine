@@ -1,7 +1,6 @@
 package com.example.lifeline;
 
 import android.annotation.SuppressLint;
-import android.media.MediaPlayer;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -10,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.ViewHolder> {
 
@@ -38,8 +37,8 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MediaPlayer.getInstance().reset();
-                MediaPlayer.currentIndex = position;
+                MPMediaPlayer.getInstance().reset();
+                MPMediaPlayer.currentIndex = position;
                 Intent intent = new Intent(context,MusicPlayerActivity.class);
                 intent.putExtra("LIST",songList);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

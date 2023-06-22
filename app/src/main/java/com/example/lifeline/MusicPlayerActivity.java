@@ -1,13 +1,13 @@
 package com.example.lifeline;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
     ImageView pausePlay, lastBtn, nextBtn;
     ArrayList<AudioModel> songList;
     AudioModel currentSong;
-    MediaPlayer mediaPlayer = MediaPlayer.getInstance();
+    MediaPlayer mediaPlayer = MPMediaPlayer.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +77,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
     }
 
     void setResourcesWithMusic(){
-        currentSong = songList.get(MediaPlayer.currentIndex);
+        currentSong = songList.get(MPMediaPlayer.currentIndex);
 
         titleTV.setText(currentSong.getTitle());
         totalTimeTV.setText(convertMMSS(currentSong.getDuration()));
@@ -106,18 +106,18 @@ public class MusicPlayerActivity extends AppCompatActivity {
 
     private void playNextSong(){
 
-        if(MediaPlayer.currentIndex== songList.size()-1)
+        if(MPMediaPlayer.currentIndex== songList.size()-1)
             return;
-        MediaPlayer.currentIndex +=1;
+        MPMediaPlayer.currentIndex +=1;
         mediaPlayer.reset();
         setResourcesWithMusic();
 
     }
 
     private void playLastSong(){
-        if(MediaPlayer.currentIndex== 0)
+        if(MPMediaPlayer.currentIndex== 0)
             return;
-        MediaPlayer.currentIndex -=1;
+        MPMediaPlayer.currentIndex -=1;
         mediaPlayer.reset();
         setResourcesWithMusic();
     }
@@ -135,4 +135,8 @@ public class MusicPlayerActivity extends AppCompatActivity {
                 TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
                 TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
     }
+//    public void goBack(View v){
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//    }
 }
