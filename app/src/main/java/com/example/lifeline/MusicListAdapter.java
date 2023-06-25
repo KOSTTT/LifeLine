@@ -54,12 +54,12 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-        ImageView imageView;
+        ImageView iconView;
 
         public ViewHolder( View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.track_name);
-            imageView = itemView.findViewById(R.id.icon_music);
+            iconView = itemView.findViewById(R.id.icon_music);
         }
 
 

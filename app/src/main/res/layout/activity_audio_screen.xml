@@ -2,19 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idclose"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".AudioScreen">
+    android:background="@drawable/background">
 
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="483dp"
         android:layout_height="477dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginEnd="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/rectangle_9" />
 
@@ -23,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="175dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="300dp"
         android:layout_marginEnd="175dp"
         android:text="Track Name"
         android:textColor="#FFFFFF"
@@ -32,18 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/close"
-        android:layout_width="28dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/close_audio"
-        android:onClick="goBack"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
     <SeekBar
         android:id="@+id/time"
         android:layout_width="300dp"
@@ -51,9 +40,9 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="250dp"
-        android:backgroundTint="#fff"
+        android:backgroundTint="#FFFFFF"
         android:progress="40"
-        android:progressTint="#fff"
+        android:progressTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -115,5 +104,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/next_right" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:onClick="goBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/close_audio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

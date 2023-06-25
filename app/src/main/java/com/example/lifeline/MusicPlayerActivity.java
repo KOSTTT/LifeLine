@@ -1,8 +1,10 @@
 package com.example.lifeline;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -135,8 +137,8 @@ public class MusicPlayerActivity extends AppCompatActivity {
                 TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
                 TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
     }
-//    public void goBack(View v){
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-//    }
+    public void goBack(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
