@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class MusicPlayerActivity extends AppCompatActivity {
-    TextView titleTV, presentTimeTV, totalTimeTV;
+    TextView titleTV, artistTV, presentTimeTV, totalTimeTV;
     SeekBar seekBar;
     ImageView pausePlay, lastBtn, nextBtn;
     ArrayList<AudioModel> songList;
@@ -29,6 +29,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_audio_screen);
 
         titleTV = findViewById(R.id.track_name);
+        artistTV = findViewById(R.id.artist);
         presentTimeTV = findViewById(R.id.present_time);
         totalTimeTV = findViewById(R.id.total_time);
         seekBar = findViewById(R.id.time);
@@ -82,6 +83,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
         currentSong = songList.get(MPMediaPlayer.currentIndex);
 
         titleTV.setText(currentSong.getTitle());
+        artistTV.setText(currentSong.getArtist());
         totalTimeTV.setText(convertMMSS(currentSong.getDuration()));
 
         pausePlay.setOnClickListener(v-> pausePlay());
