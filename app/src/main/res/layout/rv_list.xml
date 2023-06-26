@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
     android:layout_marginTop="5dp"
-    android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
@@ -14,10 +14,10 @@
         android:id="@+id/icon_music"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        app:srcCompat="@drawable/icon_song"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_song"
         tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="51dp"
-        android:layout_centerVertical="true"/>
+        tools:layout_editor_absoluteY="51dp" />
 
     <TextView
         android:id="@+id/track_name"
@@ -29,5 +29,6 @@
         android:maxLines="1"
         android:padding="10dp"
         android:text="Music"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 </RelativeLayout>

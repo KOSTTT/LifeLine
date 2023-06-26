@@ -61,7 +61,5 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             textView = itemView.findViewById(R.id.track_name);
             iconView = itemView.findViewById(R.id.icon_music);
         }
-
-
     }
 }
